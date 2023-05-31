@@ -43,7 +43,7 @@
 
 
         function connect() {
-            fetch("http://localhost:5000/daily")
+            fetch("https://8442-114-36-185-35.ngrok-free.app/daily")
             .then((res) => {
                 const data = res.json();
                 return data;
@@ -67,7 +67,7 @@
             //const uuid = xxxxx
             //const token = xxxxx
             //const url = `https://course-ec-api.hexschool.io/api/${uuid}/admin/ec/product`
-            const url = `http://localhost:5000/daily/add`
+            const url = `https://8442-114-36-185-35.ngrok-free.app/daily/add`
             // "Authorization": `Bearer ${token}`,
             let headers = {
                 "Content-Type": "application/json",
