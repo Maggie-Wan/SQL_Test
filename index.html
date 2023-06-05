@@ -57,27 +57,18 @@
                 headers: headers
             })
             .then(response => response.json())
-            .then(data => console.log(data))         
+            //.then((data) => console.log(data))         
             // .then((res) => {
             //     console.log(res)
             //     const data = res.json();
             //     return data;
             // })
             .then((mydata) => {
+                console.log(mydata)
                 $('table').bootstrapTable("destroy"); 
                 $('table').bootstrapTable({data: mydata});                   
-            });
-            // fetch('https://370a-220-136-194-41.ngrok-free.app/daily', {
-            // method: 'GET',
-            // headers: {
-            //     'Content-Type': 'application/json',
-            //     // 如果需要其他的頭，你可以在這裡加入
-            // },
-            // credentials: 'include', // 如果需要支援帶 cookie 的請求，則設定為 'include'
-            // })
-            // .then(response => response.json())
-            // .then(data => console.log(data))
-            // .catch(error => console.error('Error:', error));
+            })
+            .catch(error => console.error('Error:', error)); // Add a catch() to handle potential errors;
 
         };
         
