@@ -45,6 +45,10 @@
             // "Authorization": `Bearer ${token}`,
         function read() {
             var url =document.getElementById('UrlTxt').value
+            if(url==''){
+                window.alert("請先取得可連線測試伺服器之網址")
+                return
+            }
             console.log("url:"+url)
             var urlGet = url+`/daily`
             fetch(urlGet, {
@@ -73,6 +77,10 @@
             //const token = xxxxx
             //const url = `https://course-ec-api.hexschool.io/api/${uuid}/admin/ec/product`
             var url =document.getElementById('UrlTxt').value
+            if(url==''){
+                window.alert("請先取得可連線測試伺服器之網址")
+                return
+            }
             var urlpost = url+`/daily/add`
             // "Authorization": `Bearer ${token}`,
             let headers = {
@@ -141,7 +149,7 @@
                     <!-- set speed -->
                     <div class="col-sm-12">
                         <label for="UrlTxt" class="form-label">測試網址</label>
-                        <input type="text" class="form-control" id="UrlTxt" value="https://5b47-220-136-194-41.ngrok-free.app" required>
+                        <input type="text" class="form-control" id="UrlTxt"  required>
                         <div class="invalid-feedback">
                             Name is required
                         </div>
