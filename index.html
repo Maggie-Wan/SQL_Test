@@ -36,46 +36,41 @@
     <link href="form-validation.css" rel="stylesheet">
 
     <!-- Javascript Content -->
-    <script type="text/javascript">
-
-
+    <script type="text/javascript"  crossOrigin="anonymous">
         // var scoketobj;
         // var printer;
-
         // Contents for test.js
         // Represents JSON of the data
 
-        const url = `https://370a-220-136-194-41.ngrok-free.app/daily`
+        const url = `http://5b47-220-136-194-41.ngrok-free.app/daily`
             // "Authorization": `Bearer ${token}`,
-            let headers = {
-                "Content-Type": "application/json",
-            }
-
         function read() {
-            fetch(url)
-            .then(response => response.json())
-            //.then((data) => console.log(data))         
-            // .then((res) => {
-            //     console.log(res)
-            //     const data = res.json();
-            //     return data;
-            // })
+            fetch(url, {
+            method: "GET",
+            headers: new Headers({
+                "ngrok-skip-browser-warning": "69420",
+            }),
+            })
+            //.then(response => response.json())
+             .then((res) => {
+                console.log(res)
+                const data = res.json();
+                return data;
+            })
             .then((mydata) => {
-                console.log(mydata)
                 $('table').bootstrapTable("destroy"); 
                 $('table').bootstrapTable({data: mydata});                   
             })
             .catch(error => console.error('Error:', error)); // Add a catch() to handle potential errors;
+        }
 
-        };
         
 
-        function sendSql() {
-     
+        function sendSql() {   
             //const uuid = xxxxx
             //const token = xxxxx
             //const url = `https://course-ec-api.hexschool.io/api/${uuid}/admin/ec/product`
-            const url = ` https://370a-220-136-194-41.ngrok-free.app/daily/add`
+            const url = ` https://5b47-220-136-194-41.ngrok-free.app/daily/add`
             // "Authorization": `Bearer ${token}`,
             let headers = {
                 "Content-Type": "application/json",
