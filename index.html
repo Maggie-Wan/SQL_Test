@@ -47,7 +47,7 @@
 
         //"https://8442-114-36-185-35.ngrok-free.app/daily"
         function read() {
-            fetch("https://370a-220-136-194-41.ngrok-free.app/daily")
+            fetch("https://370a-220-136-194-41.ngrok-free.app/daily",{credentials: 'include'})
             .then((res) => {
                 const data = res.json();
                 return data;
