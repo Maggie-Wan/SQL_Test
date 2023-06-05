@@ -36,16 +36,18 @@
     <link href="form-validation.css" rel="stylesheet">
 
     <!-- Javascript Content -->
-    <script type="text/javascript"  crossOrigin="anonymous">
+    <script type="text/javascript">
         // var scoketobj;
         // var printer;
         // Contents for test.js
         // Represents JSON of the data
 
-        const url = `https://5b47-220-136-194-41.ngrok-free.app/daily`
             // "Authorization": `Bearer ${token}`,
         function read() {
-            fetch(url, {
+            var url =document.getElementById('UrlTxt').value
+            console.log("url:"+url)
+            var urlGet = url+`/daily`
+            fetch(urlGet, {
             method: "GET",
             headers: new Headers({
                 "ngrok-skip-browser-warning": "69420",
@@ -70,7 +72,8 @@
             //const uuid = xxxxx
             //const token = xxxxx
             //const url = `https://course-ec-api.hexschool.io/api/${uuid}/admin/ec/product`
-            const url = ` https://5b47-220-136-194-41.ngrok-free.app/daily/add`
+            var url =document.getElementById('UrlTxt').value
+            var urlpost = url+`/daily/add`
             // "Authorization": `Bearer ${token}`,
             let headers = {
                 "Content-Type": "application/json",
@@ -95,7 +98,7 @@
                 "doctor": doctor
             }
 
-            fetch(url, {
+            fetch(urlpost, {
                 method: "POST",
                 headers: headers,
                 //別忘了把主體参數轉成字串，否則資料會變成[object Object]，它無法被成功儲存在後台
@@ -136,7 +139,13 @@
                         </span>
                     </div>
                     <!-- set speed -->
-
+                    <div class="col-sm-12">
+                        <label for="UrlTxt" class="form-label">測試網址</label>
+                        <input type="text" class="form-control" id="UrlTxt" value="https://5b47-220-136-194-41.ngrok-free.app" required>
+                        <div class="invalid-feedback">
+                            Name is required
+                        </div>
+                    </div>
                     <div class="col-sm-4">
                         <label for="NameTxt" class="form-label">姓名</label>
                         <input type="text" class="form-control" id="NameTxt" required>
