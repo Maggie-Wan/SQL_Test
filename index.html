@@ -45,20 +45,23 @@
         // Contents for test.js
         // Represents JSON of the data
 
-        //"https://8442-114-36-185-35.ngrok-free.app/daily"
+        const url = `https://370a-220-136-194-41.ngrok-free.app/daily`
+            // "Authorization": `Bearer ${token}`,
+            let headers = {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            }
+
 
                             // 'Content-Type': 'application/json',
                     // 'X-RapidAPI-Key': 'your-api-key'
         function read() {
-            fetch("https://370a-220-136-194-41.ngrok-free.app/daily", {
-                method: 'GET',
-                mode: 'cors',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                }
-            })
+            fetch(url, {
+                method: "GET",
+                headers: headers
+            })              
             .then((res) => {
+                console.log(res)
                 const data = res.json();
                 return data;
             })
