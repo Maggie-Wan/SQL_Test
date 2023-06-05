@@ -46,14 +46,16 @@
         // Represents JSON of the data
 
         //"https://8442-114-36-185-35.ngrok-free.app/daily"
+
+                            // 'Content-Type': 'application/json',
+                    // 'X-RapidAPI-Key': 'your-api-key'
         function read() {
             fetch("https://370a-220-136-194-41.ngrok-free.app/daily", {
                 method: 'GET',
                 mode: 'cors',
                 headers: {
-                    // 'Content-Type': 'application/json',
-                    // 'X-RapidAPI-Key': 'your-api-key'
-                    accept: 'application/json',
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
                 }
             })
             .then((res) => {
